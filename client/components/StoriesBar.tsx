@@ -74,13 +74,18 @@ export default function StoriesBar({onViewStory}: StoriesBarProps) {
 
       const us =item as UserStory;
       return(
-        <TouchableOpacity style={styles.storyItem} onPress={()=>
+        <TouchableOpacity 
+        style={styles.storyItem} 
+        onPress={()=>
           onViewStory(us)}>
             <View style={styles.storyRing}>
-              <Avatar name={us.user.name} src={us.user.avatar} size={52}/>
+              <Avatar 
+              name={us.user.name} 
+              src={us.user.avatar} 
+              size={52}/>
             </View>
-            <Text style={styles.label} numberOfLines={1}>
-                {us.user.name.split("")[0]}
+            <Text style={styles.label} numberOfLines={2}>
+                {us.user.name}
               </Text>
         </TouchableOpacity>
       )
